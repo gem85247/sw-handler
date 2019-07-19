@@ -19,19 +19,15 @@
 
 - (void)clearCookiesIos9AndLater:(FlutterResult)result {
     if (@available(iOS 9.0, *)) {
-    NSLog(@"Cookies lol");
         WKWebsiteDataStore *dateStore = [WKWebsiteDataStore defaultDataStore];
         [dateStore fetchDataRecordsOfTypes:[WKWebsiteDataStore allWebsiteDataTypes]
                          completionHandler:^(NSArray<WKWebsiteDataRecord *> * __nonnull records) {
-                         NSLog(@"Cookies before for");
                              int counter = 0;
                              for (WKWebsiteDataRecord *record  in records)
                              {
-                             NSLog(@"Cookies after for");
                                  if ( [record.displayName containsString:@"supreme"])
                                  {
                                 counter++;
-                                 NSLog(@"Cookies after if");
                                      @synchronized (self) {
                                          [[WKWebsiteDataStore defaultDataStore]
                                           removeDataOfTypes:record.dataTypes
@@ -43,7 +39,6 @@
                                      }
                                  }
                              }
-                              NSLog(@"Counter: %@", [NSString stringWithFormat:@"%d", counter]);
                              if(counter == 0){
                                  result(@(YES));
                              }
