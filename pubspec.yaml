@@ -1,11 +1,11 @@
 name: supreme_handler
 description: A new SupremeWatcher plugin.
-version: 0.0.1
-author:
-homepage:
+version: 0.0.2
+homepage: https://github.com/GillesMontyne/sw-handler
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.1.0-dev.9.4 <3.0.0"
+  flutter: ^1.12.13+hotfix.2
 
 dependencies:
   flutter:
