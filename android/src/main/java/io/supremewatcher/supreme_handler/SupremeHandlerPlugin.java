@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.CookieManager;
 
-import java.net.URISyntaxException;
+import androidx.annotation.NonNull;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -25,7 +25,7 @@ public class SupremeHandlerPlugin implements MethodCallHandler {
     }
 
     @Override
-    public void onMethodCall(MethodCall call, Result result) {
+    public void onMethodCall(MethodCall call, @NonNull Result result) {
         if (call.method.equals("clearCookies")) {
             deleteSupremeCookies();
             result.success(true);
